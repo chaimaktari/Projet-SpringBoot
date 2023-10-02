@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table ( name = "Etudiant")
@@ -22,6 +23,9 @@ import java.util.Date;
             private String ecole;
             @Temporal(TemporalType.DATE)
             private Date dateNaissance;
-    }
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Reservation> reservation;
+}
+
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
