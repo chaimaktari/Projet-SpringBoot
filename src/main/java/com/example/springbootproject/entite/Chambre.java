@@ -2,12 +2,18 @@ package com.example.springbootproject.entite;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table( name = "Chambre")
 public class Chambre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +21,13 @@ public class Chambre implements Serializable {
     private Long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
+
     @ManyToOne
     Bloc bloc;
+
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<Reservation> reservation;
+    private Set<Reservation> reservations;
+
+
 
 }
