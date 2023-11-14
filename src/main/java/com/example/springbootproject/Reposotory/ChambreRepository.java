@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface ChambreRepository extends JpaRepository<Chambre, Long> {
- Chambre findAllById(Long numChambre);
-    }
+ Chambre findByNumeroChambre(Long numChambre);
+
+
+}

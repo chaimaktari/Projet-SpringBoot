@@ -3,10 +3,13 @@ package com.example.springbootproject.service;
 import com.example.springbootproject.Reposotory.ReservationRepository;
 import com.example.springbootproject.entite.Reservation;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Slf4j
 @Service
 @AllArgsConstructor
 public class ReservationService implements IReservationService {
