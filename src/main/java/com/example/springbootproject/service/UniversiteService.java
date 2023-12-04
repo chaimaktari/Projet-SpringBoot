@@ -52,15 +52,6 @@ import java.util.List;
          return universite;
     }
 
-    // meth 2 c com com
-//  @Override
-//    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) ; {
-//        Foyer foyer =  foyerRepository.findById(idFoyer).get();
-//        Universite universite = universiteRepository.findByNom(nomUniversite);
-//        Universite.setFoyer(foyer);  //parent
-//        universiteRepository.save(universite);
-//         return universite;
-//    }
     @Override
     public Universite desaffecterFoyerAUniversite(long idUniversite) {
         Universite universite = universiteRepository.findById(idUniversite).get();
@@ -71,3 +62,13 @@ import java.util.List;
 
 
 }
+
+// meth 2 c com com
+//  @Override
+//    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) ; {
+//        Foyer foyer =  foyerRepository.findById(idFoyer).get();
+//        Universite universite = universiteRepository.findByNom(nomUniversite);
+//        Universite.setFoyer(foyer);  //parent
+//        universiteRepository.save(universite);
+//         return universite;
+//    }

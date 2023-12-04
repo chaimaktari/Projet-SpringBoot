@@ -38,6 +38,11 @@ public class FoyerService  implements  IFoyerService {
     public void removeFoyer(long idFoyer) {
     }
 
+    @Override
+    public Foyer addFoyerWithBloc(Foyer foyer) {
+
+        return foyerRepository.save(foyer);
+    }
 
 }
 

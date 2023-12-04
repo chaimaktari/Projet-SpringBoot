@@ -22,7 +22,7 @@ import java.util.Set;
         @Id
         @GeneratedValue  (strategy = GenerationType.IDENTITY)
         @Column(name="idEtudiant")
-        private Long idEtudiant; // Clé primaire
+        private Long idEtudiant;
          private String nomEt;
          private String prenomEt;
           private Long cin;

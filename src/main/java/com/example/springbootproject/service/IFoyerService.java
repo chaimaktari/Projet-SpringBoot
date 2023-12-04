@@ -19,4 +19,5 @@ public interface IFoyerService {
     void removeFoyer  (long idFoyer);
 
 
+    Foyer addFoyerWithBloc (Foyer foyer);
 }

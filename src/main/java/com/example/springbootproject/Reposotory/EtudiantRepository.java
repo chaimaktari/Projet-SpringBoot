@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface EtudiantRepository extends JpaRepository <Etudiant, Long > {
-    Etudiant findByPrenomEt (String prenomEt);
-    Etudiant  findByNomEt (String nomEt);
+
+    Etudiant findByNomEtAndPrenomEt(String nomEt, String prenomEt);
 }

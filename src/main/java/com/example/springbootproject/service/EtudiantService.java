@@ -10,7 +10,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -27,7 +29,7 @@ public class EtudiantService implements  IEtudiantService {
 
     @Override
     public Etudiant addEtudiant(Etudiant e) {
-        return (Etudiant) etudiantReposotory.save(e);
+        return etudiantReposotory.save(e);
     }
 
     @Override
@@ -47,21 +49,19 @@ public class EtudiantService implements  IEtudiantService {
 
     @Override
     public Etudiant affecterEtudiantAReservation(String nomEt, String prenomEt, String idReservation) {
-        Etudiant etudiant = etudiantReposotory.findByPrenomEt(prenomEt);
-        Etudiant etudiant1 = etudiantReposotory.findByNomEt(nomEt);
-        Reservation reservation = reservationRepository.findByRes(idReservation);
-       // List<Reservation> affectation = new ArrayList<>();
-        List<Etudiant> affectation = new ArrayList<>();
-        if (etudiant1 != null && etudiant != null && reservation != null) {
-            etudiant.setNomEt(nomEt);
-            etudiant.setPrenomEt(prenomEt);
-
-            etudiantReposotory.save(etudiant1);
-           // return etudiant;
-
+        Etudiant etudiant = etudiantReposotory.findByNomEtAndPrenomEt(nomEt,prenomEt);
+        Reservation reservation = reservationRepository.findByIdReservation(idReservation);
+        Set<Reservation> reservationsMiseAJour = new HashSet<>();
+        if(etudiant.getReservations()!=null){
+            reservationsMiseAJour=etudiant.getReservations();
         }
+        reservationsMiseAJour.add(reservation);
+        etudiant.setReservations(reservationsMiseAJour);
+        etudiantReposotory.save(etudiant);
         return etudiant;
-    }}
+        }
+    }
+
 
 
 

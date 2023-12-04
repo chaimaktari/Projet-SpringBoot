@@ -3,6 +3,7 @@ package com.example.springbootproject.service;
 import com.example.springbootproject.entite.Reservation;
 import com.example.springbootproject.entite.Universite;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IReservationService {
@@ -14,8 +15,10 @@ public interface IReservationService {
 
     Reservation updateReservation (Reservation r);
 
-    Reservation retrieveReservation (long idReservation);
+    Reservation retrieveReservation (String idReservation);
 
-    void removeReservation  (long idReservation);
+    void removeReservation  (String idReservation);
+/*
+    public List<Reservation> getReservationParAnneeUniversitaire(Date dateDebut , Date dateFin ); */
 
 }

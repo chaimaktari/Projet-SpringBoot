@@ -29,7 +29,7 @@ public class UniversiteControlleur {
     }
 
     //http://localhost:8089/foyer/bloc/retrieve-all-Blocs
-    @PostMapping("/add-bloc")
+    @PostMapping("/add-university")
     public Universite addUniversite (@RequestBody Universite u) {
         Universite universite = universiteService.addUniversite(u);
         return universite; }

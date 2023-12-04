@@ -17,7 +17,7 @@ import java.util.List;
 public class BlocContolleur
 
    { IBlocService blocService;
-    //http://localhost:8089/foyer/bloc/retrieve-all-Blocs
+    //http://localhost:8089/Bloc/retrieve-all-Blocs
    @GetMapping("/retrieve-all-Blocs")
     public List<Bloc> getBloc() {
         List<Bloc> listBlocs= blocService.retrieveAllBlocs();
@@ -28,7 +28,7 @@ public class BlocContolleur
        return blocService.retrieveBloc(blocId);
     }
 
-       //http://localhost:8089/foyer/bloc/retrieve-all-Blocs
+       //http://localhost:8089/Bloc//retrieve-bloc/{bloc-id}
        @PostMapping ("/add-bloc")
        public Bloc addBloc (@RequestBody Bloc b) {
        Bloc bloc = blocService.addBloc(b);
@@ -37,6 +37,7 @@ public class BlocContolleur
        @DeleteMapping ("/remove-bloc/{bloc-id}")
        public void removeBloc(@PathVariable ("bloc-id") Long blocId) {
            blocService.removeBloc(blocId); }
+
 
        @PutMapping ("/update-bloc")
        public   Bloc updateBloc(@RequestBody Bloc b){

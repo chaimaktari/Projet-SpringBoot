@@ -1,5 +1,6 @@
 package com.example.springbootproject.entite;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +28,8 @@ public class Bloc implements Serializable {
     @ManyToOne
     Foyer foyer;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bloc")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bloc", fetch = FetchType.EAGER)
+
+    @JsonIgnore
     private List<Chambre> chambres;
 }

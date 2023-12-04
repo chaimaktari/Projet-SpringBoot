@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-
+@RequestMapping ("/Foyer")
 public class FoyerControlleur {
     IFoyerService foyerService;
     //http://localhost:8089/foyer/bloc/retrieve-all-Blocs
@@ -39,6 +39,10 @@ public class FoyerControlleur {
     public   Foyer updateFoyer(@RequestBody Foyer f){
         Foyer foyer = foyerService.updateFoyer(f);
         return foyer; }
-
-
+/*
+    @PostMapping("/add-foyerWithBloc")
+    public Foyer addFoyerWithBloc (@RequestBody Foyer f) {
+        Foyer foyer = IFoyerService.addFoyerWithBloc(f);
+        return foyer;
+    }*/
 }

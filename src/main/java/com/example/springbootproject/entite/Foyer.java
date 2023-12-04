@@ -23,6 +23,7 @@ import java.util.Set;
         private String nomFoyer;
         private Long capaciteFoyer;
 
+
     @OneToOne(mappedBy="foyer")
     private Universite universite;
 
